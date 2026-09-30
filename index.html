@@ -1,579 +1,625 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gedebok Mantap - Keripik Pelepah Pisang Renyah</title>
-    <!-- Font Awesome untuk ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-        }
-
-        body {
-            background: #fef9e7;
-            color: #2d1e0f;
-            scroll-behavior: smooth;
-        }
-
-        /* Header / Cover */
-        .cover {
-            background: linear-gradient(145deg, #f8e3b0, #e6c87c);
-            padding: 1.5rem 2rem 2rem;
-            border-bottom: 8px solid #a67c3b;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        }
-
-        .cover-content {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .brand-area {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .brand-text h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: #4a2c0c;
-            text-shadow: 3px 3px 0 #f3d37c, 6px 6px 0 rgba(0,0,0,0.1);
-            line-height: 1.1;
-        }
-
-        .brand-text .tagline {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #6b4a1e;
-            background: #ffecb3;
-            display: inline-block;
-            padding: 0.3rem 1.5rem;
-            border-radius: 40px;
-            margin-top: 0.5rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-            background: rgba(255,255,240,0.7);
-            padding: 0.8rem 1.5rem;
-            border-radius: 60px;
-            backdrop-filter: blur(2px);
-        }
-
-        .contact-links a {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            text-decoration: none;
-            font-weight: 700;
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            transition: 0.2s;
-            font-size: 1.1rem;
-            color: #2d1e0f;
-            background: #fff2d7;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-
-        .contact-links a i {
-            font-size: 1.4rem;
-        }
-
-        .contact-links a:hover {
-            transform: scale(1.05);
-            background: #ffeaa6;
-        }
-
-        .ig-link i { color: #c13584; }
-        .wa-link i { color: #25D366; }
-
-        /* Hero Foto Produk */
-        .hero {
-            max-width: 1300px;
-            margin: 1.5rem auto 2rem;
-            padding: 0 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image {
-            flex: 1 1 450px;
-            background: #d9b382;
-            border-radius: 60px 60px 40px 40px;
-            padding: 1.8rem 1.8rem 1rem;
-            box-shadow: 0 25px 30px -10px rgba(90, 60, 20, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            border: 4px solid #f5e1b0;
-        }
-
-        .hero-image .chips-bg {
-            display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-
-        .chip-bag {
-            background: #f7d98c;
-            border-radius: 30px 30px 20px 20px;
-            padding: 1rem 0.8rem 0.5rem;
-            box-shadow: inset 0 -8px 0 #b37b3a, 0 10px 15px rgba(0,0,0,0.2);
-            width: 95px;
-            text-align: center;
-            border: 2px solid #b37b3a;
-            transform: rotate(-2deg);
-        }
-
-        .chip-bag:nth-child(2) { background: #f5b87a; transform: rotate(3deg); }
-        .chip-bag:nth-child(3) { background: #f0d06a; transform: rotate(-4deg); }
-        .chip-bag:nth-child(4) { background: #e6b85c; transform: rotate(1deg); }
-        .chip-bag:nth-child(5) { background: #f7b56e; transform: rotate(-3deg); }
-        .chip-bag:nth-child(6) { background: #c7e08a; transform: rotate(4deg); }
-
-        .chip-bag i {
-            font-size: 2rem;
-            color: #5a3e1b;
-            margin-bottom: 0.2rem;
-        }
-
-        .chip-bag span {
-            font-size: 0.7rem;
-            font-weight: 700;
-            background: #fff5dd;
-            padding: 0.2rem 0.3rem;
-            border-radius: 20px;
-            color: #422d14;
-            display: block;
-        }
-
-        .pelepah-img {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 10px;
-            margin-top: 0.5rem;
-        }
-
-        .pelepah-img .pelepah {
-            font-size: 3rem;
-            filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));
-        }
-
-        .pelepah-img .keripik {
-            font-size: 2.5rem;
-            animation: renyah 1.5s infinite alternate;
-        }
-
-        @keyframes renyah {
-            0% { transform: rotate(-5deg) scale(1); }
-            100% { transform: rotate(5deg) scale(1.1); }
-        }
-
-        .hero-image .caption {
-            margin-top: 0.8rem;
-            background: #fff7e5;
-            padding: 0.5rem 1.5rem;
-            border-radius: 40px;
-            font-weight: 700;
-            color: #4f3217;
-            font-size: 1.1rem;
-            border: 2px dashed #bb8f4b;
-        }
-
-        .hero-text {
-            flex: 1 1 350px;
-        }
-
-        .hero-text h2 {
-            font-size: 2.5rem;
-            color: #5a3a15;
-            line-height: 1.2;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            margin: 1rem 0;
-            color: #3d2b12;
-            font-weight: 500;
-        }
-
-        .flavor-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1rem;
-        }
-
-        .flavor-tag {
-            background: #e6c87c;
-            padding: 0.4rem 1.2rem;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1rem;
-            color: #2b1c08;
-            box-shadow: 0 4px 0 #9e7a3e;
-            border: 1px solid #ffeac2;
-        }
-
-        /* Navigasi Menu */
-        .menu-nav {
-            max-width: 1000px;
-            margin: 2rem auto 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            padding: 0 1rem;
-        }
-
-        .menu-btn {
-            background: #fff3d1;
-            border: 3px solid #b37b3a;
-            padding: 1rem 2rem;
-            font-size: 1.3rem;
-            font-weight: 800;
-            border-radius: 60px;
-            color: #4b2f10;
-            cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 6px 0 #8b5e2c;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .menu-btn i {
-            font-size: 1.6rem;
-        }
-
-        .menu-btn:hover {
-            background: #ffe6a8;
-            transform: translateY(2px);
-            box-shadow: 0 4px 0 #8b5e2c;
-        }
-
-        .menu-btn.active {
-            background: #f5c96b;
-            box-shadow: 0 4px 0 #6e4a1e;
-            transform: translateY(2px);
-        }
-
-        /* Konten Halaman */
-        .page-container {
-            max-width: 1200px;
-            margin: 2rem auto 4rem;
-            padding: 0 2rem;
-        }
-
-        .page-section {
-            display: none;
-            background: #fffbf0;
-            padding: 2rem 2rem 2.5rem;
-            border-radius: 60px 60px 40px 40px;
-            box-shadow: 0 20px 30px rgba(120, 80, 30, 0.15);
-            border: 3px solid #ebd5a8;
-        }
-
-        .page-section.active-section {
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #4b2e0e;
-            margin-bottom: 2rem;
-            border-left: 16px solid #dbaa4b;
-            padding-left: 1.5rem;
-        }
-
-        /* Stok Varian */
-        .stok-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .stok-group {
-            background: #fef3dd;
-            border-radius: 50px;
-            padding: 1.8rem;
-            border: 2px solid #cdb28b;
-        }
-
-        .stok-group h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: #6a4418;
-        }
-
-        .stok-group.ready h3 i { color: #2e7d32; }
-        .stok-group.notready h3 i { color: #b23c17; }
-
-        .varian-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .varian-card {
-            background: white;
-            border-radius: 30px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            box-shadow: 0 8px 0 #d9b382, 0 12px 18px rgba(0,0,0,0.1);
-            border: 2px solid #e6cba2;
-        }
-
-        .varian-card i {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .varian-card .nama {
-            font-weight: 800;
-            font-size: 1.3rem;
-            background: #f7e4c1;
-            border-radius: 30px;
-            padding: 0.2rem 0.5rem;
-            display: inline-block;
-        }
-
-        .varian-card .harga {
-            font-weight: 800;
-            color: #a1560e;
-            margin: 0.7rem 0 0.3rem;
-            font-size: 1.5rem;
-        }
-
-        .varian-card .stok-info {
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .ready .varian-card .stok-info { color: #2e7d32; }
-        .notready .varian-card .stok-info { color: #b23c17; }
-
-        .varian-card .status-badge {
-            display: inline-block;
-            margin-top: 0.6rem;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            background: #d4edda;
-            color: #1e5e1e;
-        }
-
-        .notready .varian-card .status-badge {
-            background: #f8d7da;
-            color: #a12b2b;
-        }
-
-        /* Form Pemesanan */
-        .order-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-        }
-
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            flex: 1 1 250px;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .form-group label {
-            font-weight: 700;
-            color: #4a2e0e;
-            font-size: 1.1rem;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            padding: 1rem 1.2rem;
-            border-radius: 40px;
-            border: 2px solid #dbbd8c;
-            font-size: 1rem;
-            background: #fffdf7;
-            outline: none;
-            transition: 0.2s;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: #b37b3a;
-            box-shadow: 0 0 0 4px rgba(179, 123, 58, 0.2);
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-            border-radius: 30px;
-        }
-
-        .payment-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            background: #f9efdb;
-            padding: 1.2rem 1.8rem;
-            border-radius: 50px;
-            margin: 0.5rem 0;
-        }
-
-        .payment-options label {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-
-        .btn-submit {
-            background: #f5b342;
-            border: none;
-            padding: 1.3rem 2rem;
-            font-size: 1.5rem;
-            font-weight: 800;
-            border-radius: 60px;
-            color: #2f1e06;
-            box-shadow: 0 8px 0 #9e6d2b;
-            cursor: pointer;
-            transition: 0.1s;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-        }
-
-        .btn-submit:hover {
-            background: #ffc85c;
-            transform: translateY(2px);
-            box-shadow: 0 6px 0 #9e6d2b;
-        }
-
-        .btn-submit:active {
-            transform: translateY(6px);
-            box-shadow: 0 2px 0 #9e6d2b;
-        }
-
-        /* Catering */
-        .catering-box {
-            background: #e9dcc9;
-            border-radius: 50px;
-            padding: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .catering-info {
-            flex: 2 1 300px;
-        }
-
-        .catering-info h3 {
-            font-size: 2rem;
-            color: #4f3217;
-            margin-bottom: 1rem;
-        }
-
-        .catering-info ul {
-            list-style: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .catering-info li {
-            margin: 0.8rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .catering-info i {
-            color: #b37b3a;
-            width: 1.8rem;
-        }
-
-        .catering-form {
-            flex: 1 1 300px;
-            background: #fff8ed;
-            border-radius: 50px;
-            padding: 2rem;
-            border: 2px solid #cdb28b;
-        }
-
-        .catering-form .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        /* Responsif */
-        @media (max-width: 700px) {
-            .brand-text h1 { font-size: 2.2rem; }
-            .cover-content { flex-direction: column; align-items: flex-start; }
-            .contact-links { width: 100%; justify-content: center; }
-            .hero { padding: 0 1rem; }
-            .page-section { padding: 1.5rem; }
-            .menu-btn { font-size: 1rem; padding: 0.8rem 1.2rem; }
-            .section-title { font-size: 1.8rem; }
-        }
-
-        /* Sticky footer sederhana */
-        .footer-note {
-            text-align: center;
-            padding: 2rem;
-            color: #7a5c34;
-            font-weight: 500;
-            border-top: 2px dashed #dbbd8c;
-            margin-top: 2rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gedebok Mantap - Keripik Pelepah Pisang Renyah, Gurih, Enak</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+        background: #fef9e7;
+        color: #2d1e0f;
+        scroll-behavior: smooth;
+    }
+
+    /* ============ COVER / HEADER ============ */
+    .cover {
+        background: linear-gradient(145deg, #f8e3b0, #e6c87c);
+        padding: 1.5rem 2rem 2rem;
+        border-bottom: 8px solid #a67c3b;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .cover-content {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .brand-text h1 {
+        font-size: 3.2rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: #4a2c0c;
+        text-shadow: 3px 3px 0 #f3d37c, 6px 6px 0 rgba(0,0,0,0.1);
+        line-height: 1.1;
+    }
+
+    .brand-text .tagline {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #6b4a1e;
+        background: #ffecb3;
+        display: inline-block;
+        padding: 0.3rem 1.5rem;
+        border-radius: 40px;
+        margin-top: 0.5rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-links {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        background: rgba(255,255,240,0.7);
+        padding: 0.8rem 1.5rem;
+        border-radius: 60px;
+        backdrop-filter: blur(2px);
+    }
+
+    .contact-links a {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        transition: 0.2s;
+        font-size: 1.1rem;
+        color: #2d1e0f;
+        background: #fff2d7;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-links a i { font-size: 1.4rem; }
+    .contact-links a:hover { transform: scale(1.05); background: #ffeaa6; }
+    .ig-link i { color: #c13584; }
+    .wa-link i { color: #25D366; }
+
+    /* ============ HERO PRODUK ============ */
+    .hero {
+        max-width: 1300px;
+        margin: 1.5rem auto 1rem;
+        padding: 0 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Panel foto produk meniru gambar referensi */
+    .hero-image {
+        flex: 1 1 520px;
+        background: linear-gradient(180deg, #fdf3e0 0%, #f5e6c8 100%);
+        border-radius: 50px;
+        padding: 1.8rem 1.5rem 1.2rem;
+        box-shadow: 0 25px 30px -12px rgba(90, 60, 20, 0.45);
+        border: 4px solid #f0dcb0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Hiasan daun di belakang */
+    .hero-image::before {
+        content: "🌿";
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        font-size: 3rem;
+        opacity: 0.35;
+        transform: rotate(-20deg);
+    }
+    .hero-image::after {
+        content: "🍌";
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2.6rem;
+        opacity: 0.4;
+        transform: rotate(15deg);
+    }
+
+    .hero-title-small {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #5a3a15;
+        margin-bottom: 0.3rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-subtitle-small {
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #7a5c34;
+        background: #e3f0c8;
+        display: inline-block;
+        padding: 0.25rem 1.2rem;
+        border-radius: 30px;
+        margin: 0 auto 1rem;
+        display: table;
+    }
+
+    /* Deretan kemasan */
+    .kemasan-row {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1.2rem;
+    }
+
+    .kemasan {
+        width: 130px;
+        background: #fdf6e6;
+        border-radius: 18px 18px 12px 12px;
+        padding: 0.9rem 0.5rem 0.7rem;
+        text-align: center;
+        box-shadow: 0 10px 14px rgba(0,0,0,0.18), inset 0 -6px 0 rgba(0,0,0,0.06);
+        border: 2px solid #e0c48e;
+        position: relative;
+        transition: transform 0.3s;
+    }
+    .kemasan:hover { transform: translateY(-6px) rotate(1deg); }
+
+    .kemasan.var-original { background: #fbf0d2; border-color: #c9a86a; }
+    .kemasan.var-balado { background: #f7d9b8; border-color: #c47b3e; }
+    .kemasan.var-barbeque { background: #e8c9a0; border-color: #8a5a2b; }
+    .kemasan.var-jagung { background: #fcf0b8; border-color: #d9b83e; }
+    .kemasan.var-manis { background: #fbe4d5; border-color: #dd9c6b; }
+    .kemasan.var-pedas { background: #f6c1a1; border-color: #b83c1a; }
+    .kemasan.var-jeruk { background: #dcefc4; border-color: #7ba343; }
+
+    .kemasan .badge-100 {
+        position: absolute;
+        top: -10px;
+        right: -8px;
+        background: #c0392b;
+        color: #fff;
+        font-size: 0.55rem;
+        font-weight: 800;
+        padding: 0.25rem 0.45rem;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 1;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+        border: 2px solid #fff;
+    }
+
+    .kemasan .brand-mini {
+        font-size: 0.7rem;
+        font-weight: 800;
+        color: #4a2c0c;
+        line-height: 1.15;
+        margin-bottom: 0.3rem;
+    }
+
+    .kemasan .brand-mini span {
+        display: block;
+        font-size: 0.62rem;
+        font-weight: 700;
+        color: #8a5a2b;
+    }
+
+    .kemasan .isi-keripik {
+        font-size: 1.7rem;
+        margin: 0.2rem 0;
+    }
+
+    .kemasan .label-rasa {
+        display: inline-block;
+        padding: 0.2rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 800;
+        color: #fff;
+        margin-top: 0.2rem;
+    }
+
+    .var-original .label-rasa { background: #6b8e23; }
+    .var-balado .label-rasa { background: #c0392b; }
+    .var-barbeque .label-rasa { background: #7a4a1e; }
+    .var-jagung .label-rasa { background: #d4a017; }
+    .var-manis .label-rasa { background: #d97b3f; }
+    .var-pedas .label-rasa { background: #a5240a; }
+    .var-jeruk .label-rasa { background: #4e7a22; }
+
+    .kemasan .berat {
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: #6b4a1e;
+        margin-top: 0.35rem;
+    }
+
+    /* Pelepah & keripik */
+    .pelepah-scene {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0.6rem;
+        margin: 0.5rem 0 0.3rem;
+        flex-wrap: wrap;
+    }
+
+    .pelepah-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pelepah-item .emoji-pelepah { font-size: 2.6rem; filter: drop-shadow(2px 3px 3px rgba(0,0,0,0.25)); }
+    .pelepah-item .emoji-keripik { font-size: 2rem; animation: crunch 1.6s infinite alternate; }
+
+    @keyframes crunch {
+        0% { transform: rotate(-6deg) scale(1); }
+        100% { transform: rotate(6deg) scale(1.12); }
+    }
+
+    .hero-caption {
+        text-align: center;
+        margin-top: 0.7rem;
+        font-weight: 700;
+        color: #4f3217;
+        background: #fff7e5;
+        padding: 0.5rem 1.2rem;
+        border-radius: 40px;
+        border: 2px dashed #bb8f4b;
+        font-size: 0.95rem;
+    }
+
+    .hero-text { flex: 1 1 340px; }
+    .hero-text h2 { font-size: 2.4rem; color: #5a3a15; line-height: 1.2; }
+    .hero-text p { font-size: 1.15rem; margin: 1rem 0; color: #3d2b12; font-weight: 500; }
+
+    .flavor-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .flavor-tag {
+        background: #e6c87c;
+        padding: 0.4rem 1.2rem;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #2b1c08;
+        box-shadow: 0 4px 0 #9e7a3e;
+        border: 1px solid #ffeac2;
+    }
+
+    /* ============ MENU NAV ============ */
+    .menu-nav {
+        max-width: 1050px;
+        margin: 2rem auto 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .menu-btn {
+        background: #fff3d1;
+        border: 3px solid #b37b3a;
+        padding: 1rem 1.8rem;
+        font-size: 1.15rem;
+        font-weight: 800;
+        border-radius: 60px;
+        color: #4b2f10;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 6px 0 #8b5e2c;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .menu-btn i { font-size: 1.5rem; }
+    .menu-btn:hover { background: #ffe6a8; transform: translateY(2px); box-shadow: 0 4px 0 #8b5e2c; }
+    .menu-btn.active { background: #f5c96b; box-shadow: 0 4px 0 #6e4a1e; transform: translateY(2px); }
+
+    /* ============ PAGE ============ */
+    .page-container { max-width: 1200px; margin: 2rem auto 4rem; padding: 0 2rem; }
+
+    .page-section {
+        display: none;
+        background: #fffbf0;
+        padding: 2rem 2rem 2.5rem;
+        border-radius: 60px 60px 40px 40px;
+        box-shadow: 0 20px 30px rgba(120, 80, 30, 0.15);
+        border: 3px solid #ebd5a8;
+    }
+
+    .page-section.active-section { display: block; }
+
+    .section-title {
+        font-size: 2.1rem;
+        font-weight: 800;
+        color: #4b2e0e;
+        margin-bottom: 2rem;
+        border-left: 16px solid #dbaa4b;
+        padding-left: 1.5rem;
+    }
+
+    /* ---- STOK ---- */
+    .stok-wrapper { display: flex; flex-direction: column; gap: 2rem; }
+
+    .stok-group {
+        background: #fef3dd;
+        border-radius: 50px;
+        padding: 1.8rem;
+        border: 2px solid #cdb28b;
+    }
+
+    .stok-group h3 {
+        font-size: 1.7rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: #6a4418;
+    }
+
+    .stok-group.ready h3 i { color: #2e7d32; }
+    .stok-group.notready h3 i { color: #b23c17; }
+
+    .varian-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .varian-card {
+        background: white;
+        border-radius: 30px;
+        padding: 1.4rem 1rem;
+        text-align: center;
+        box-shadow: 0 8px 0 #d9b382, 0 12px 18px rgba(0,0,0,0.1);
+        border: 2px solid #e6cba2;
+        transition: 0.2s;
+    }
+    .varian-card:hover { transform: translateY(-4px); }
+
+    .varian-card i { font-size: 2.4rem; margin-bottom: 0.4rem; }
+
+    .varian-card .nama {
+        font-weight: 800;
+        font-size: 1.2rem;
+        background: #f7e4c1;
+        border-radius: 30px;
+        padding: 0.2rem 0.5rem;
+        display: inline-block;
+    }
+
+    .varian-card .harga {
+        font-weight: 800;
+        color: #a1560e;
+        margin: 0.6rem 0 0.3rem;
+        font-size: 1.35rem;
+    }
+
+    .varian-card .stok-info { font-size: 0.92rem; font-weight: 600; }
+    .ready .varian-card .stok-info { color: #2e7d32; }
+    .notready .varian-card .stok-info { color: #b23c17; }
+
+    .varian-card .status-badge {
+        display: inline-block;
+        margin-top: 0.55rem;
+        padding: 0.3rem 0.9rem;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        background: #d4edda;
+        color: #1e5e1e;
+    }
+
+    .notready .varian-card .status-badge { background: #f8d7da; color: #a12b2b; }
+
+    /* ---- FORM ---- */
+    .order-form { display: flex; flex-direction: column; gap: 1.6rem; }
+
+    .form-row { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+
+    .form-group { flex: 1 1 250px; display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .form-group label { font-weight: 700; color: #4a2e0e; font-size: 1.05rem; }
+
+    .form-group input, .form-group select, .form-group textarea {
+        padding: 1rem 1.2rem;
+        border-radius: 40px;
+        border: 2px solid #dbbd8c;
+        font-size: 1rem;
+        background: #fffdf7;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        border-color: #b37b3a;
+        box-shadow: 0 0 0 4px rgba(179, 123, 58, 0.2);
+    }
+
+    .form-group textarea { min-height: 100px; resize: vertical; border-radius: 30px; }
+
+    .payment-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        background: #f9efdb;
+        padding: 1.2rem 1.8rem;
+        border-radius: 50px;
+        margin: 0.5rem 0;
+    }
+
+    .payment-options label {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        cursor: pointer;
+    }
+
+    .btn-submit {
+        background: #f5b342;
+        border: none;
+        padding: 1.3rem 2rem;
+        font-size: 1.4rem;
+        font-weight: 800;
+        border-radius: 60px;
+        color: #2f1e06;
+        box-shadow: 0 8px 0 #9e6d2b;
+        cursor: pointer;
+        transition: 0.1s;
+        letter-spacing: 1px;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .btn-submit:hover { background: #ffc85c; transform: translateY(2px); box-shadow: 0 6px 0 #9e6d2b; }
+    .btn-submit:active { transform: translateY(6px); box-shadow: 0 2px 0 #9e6d2b; }
+
+    /* ---- CATERING ---- */
+    .catering-box {
+        background: #e9dcc9;
+        border-radius: 50px;
+        padding: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .catering-info { flex: 2 1 300px; }
+    .catering-info h3 { font-size: 1.9rem; color: #4f3217; margin-bottom: 1rem; }
+    .catering-info ul { list-style: none; font-size: 1.05rem; font-weight: 500; }
+    .catering-info li { margin: 0.8rem 0; display: flex; align-items: center; gap: 0.8rem; }
+    .catering-info i { color: #b37b3a; width: 1.8rem; }
+
+    .catering-form {
+        flex: 1 1 300px;
+        background: #fff8ed;
+        border-radius: 50px;
+        padding: 2rem;
+        border: 2px solid #cdb28b;
+    }
+
+    .catering-form .form-group { margin-bottom: 1.2rem; }
+
+    /* ---- INFO PRODUK TAMBAHAN (meniru bagian bawah gambar) ---- */
+    .info-extra {
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        background: #fffbf0;
+        border: 2px solid #ebd5a8;
+        border-radius: 40px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 20px rgba(120, 80, 30, 0.1);
+    }
+
+    .info-card h4 {
+        font-size: 1.2rem;
+        color: #4b2e0e;
+        margin-bottom: 1rem;
+        border-bottom: 3px dotted #dbaa4b;
+        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .info-card ul { list-style: none; }
+    .info-card li {
+        font-size: 0.95rem;
+        margin-bottom: 0.7rem;
+        display: flex;
+        gap: 0.6rem;
+        align-items: flex-start;
+        color: #3d2b12;
+    }
+    .info-card li i { color: #b37b3a; margin-top: 0.2rem; }
+
+    .proses-step {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        justify-content: center;
+    }
+
+    .step-item {
+        background: #fff3d1;
+        border-radius: 20px;
+        padding: 0.7rem 0.6rem;
+        text-align: center;
+        width: 105px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #4b2f10;
+        border: 2px solid #e0c48e;
+    }
+
+    .step-item .angka {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .footer-note {
+        text-align: center;
+        padding: 2rem;
+        color: #7a5c34;
+        font-weight: 500;
+        border-top: 2px dashed #dbbd8c;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+        .brand-text h1 { font-size: 2.1rem; }
+        .cover-content { flex-direction: column; align-items: flex-start; }
+        .contact-links { width: 100%; justify-content: center; }
+        .hero { padding: 0 1rem; }
+        .page-section { padding: 1.5rem; }
+        .menu-btn { font-size: 0.95rem; padding: 0.8rem 1.1rem; }
+        .section-title { font-size: 1.7rem; }
+        .kemasan { width: 105px; }
+        .kemasan .isi-keripik { font-size: 1.4rem; }
+    }
+</style>
 </head>
 <body>
 
-<!-- COVER / HEADER -->
+<!-- ================= COVER / HEADER ================= -->
 <header class="cover">
     <div class="cover-content">
-        <div class="brand-area">
-            <div class="brand-text">
-                <h1>Gedebok Mantap</h1>
-                <div class="tagline">Keripik Pelepah Pisang • Renyah, Gurih, Enak!</div>
-            </div>
+        <div class="brand-text">
+            <h1>Gedebok Mantap</h1>
+            <div class="tagline">Camilar Unik dari Alam — Renyah, Gurih, dan Bergizi</div>
         </div>
         <div class="contact-links">
             <a href="https://instagram.com/gedebokmantap" target="_blank" class="ig-link">
@@ -586,29 +632,86 @@
     </div>
 </header>
 
-<!-- HERO FOTO PRODUK + PELEPAH + KERIPIK -->
+<!-- ================= HERO / FOTO PRODUK ================= -->
 <div class="hero">
     <div class="hero-image">
-        <div class="chips-bg">
-            <div class="chip-bag"><i class="fas fa-leaf"></i><span>Original</span></div>
-            <div class="chip-bag"><i class="fas fa-fire"></i><span>Balado</span></div>
-            <div class="chip-bag"><i class="fas fa-corn"></i><span>Jagung</span></div>
-            <div class="chip-bag"><i class="fas fa-candy-cane"></i><span>Manis</span></div>
-            <div class="chip-bag"><i class="fas fa-pepper-hot"></i><span>Pedas</span></div>
-            <div class="chip-bag"><i class="fas fa-seedling"></i><span>Daun Jeruk</span></div>
+        <div class="hero-title-small">Keripik Gedebog Pisang</div>
+        <div class="hero-subtitle-small">Renyah • Gurih • Sehat</div>
+
+        <!-- Deretan kemasan sesuai gambar referensi -->
+        <div class="kemasan-row">
+            <!-- Original -->
+            <div class="kemasan var-original">
+                <div class="badge-100">100%<br>Asli</div>
+                <div class="brand-mini">Keripik<br><span>Gedebok Pisang</span></div>
+                <div class="isi-keripik">🍟</div>
+                <div class="label-rasa">Original</div>
+                <div class="berat">Berat: 100 g</div>
+            </div>
+            <!-- Balado -->
+            <div class="kemasan var-balado">
+                <div class="badge-100">100%<br>Asli</div>
+                <div class="brand-mini">Keripik<br><span>Gedebok Pisang</span></div>
+                <div class="isi-keripik">🥔</div>
+                <div class="label-rasa">Balado</div>
+                <div class="berat">Berat: 100 g</div>
+            </div>
+            <!-- Barbeque -->
+            <div class="kemasan var-barbeque">
+                <div class="badge-100">100%<br>Asli</div>
+                <div class="brand-mini">Keripik<br><span>Gedebok Pisang</span></div>
+                <div class="isi-keripik">🍟</div>
+                <div class="label-rasa">Barbeque</div>
+                <div class="berat">Berat: 100 g</div>
+            </div>
+            <!-- Jagung -->
+            <div class="kemasan var-jagung">
+                <div class="badge-100">100%<br>Asli</div>
+                <div class="brand-mini">Keripik<br><span>Gedebok Pisang</span></div>
+                <div class="isi-keripik">🌽</div>
+                <div class="label-rasa">Jagung</div>
+                <div class="berat">Berat: 100 g</div>
+            </div>
+            <!-- Manis -->
+            <div class="kemasan var-manis">
+                <div class="badge-100">100%<br>Asli</div>
+                <div class="brand-mini">Keripik<br><span>Gedebok Pisang</span></div>
+                <div class="isi-keripik">🍯</div>
+                <div class="label-rasa">Manis</div>
+                <div class="berat">Berat: 100 g</div>
+            </div>
+            <!-- Pedas -->
+            <div class="kemasan var-pedas">
+                <div class="badge-100">100%<br>Asli</div>
+                <div class="brand-mini">Keripik<br><span>Gedebok Pisang</span></div>
+                <div class="isi-keripik">🌶️</div>
+                <div class="label-rasa">Pedas</div>
+                <div class="berat">Berat: 100 g</div>
+            </div>
+            <!-- Daun Jeruk -->
+            <div class="kemasan var-jeruk">
+                <div class="badge-100">100%<br>Asli</div>
+                <div class="brand-mini">Keripik<br><span>Gedebok Pisang</span></div>
+                <div class="isi-keripik">🍃</div>
+                <div class="label-rasa">Daun Jeruk</div>
+                <div class="berat">Berat: 100 g</div>
+            </div>
         </div>
-        <div class="pelepah-img">
-            <span class="pelepah">🌿</span>
-            <span class="keripik">🍟</span>
-            <span class="pelepah">🌿</span>
-            <span class="keripik">🥔</span>
-            <span class="pelepah">🌿</span>
+
+        <!-- Pelepah pisang & keripik -->
+        <div class="pelepah-scene">
+            <div class="pelepah-item"><span class="emoji-pelepah">🌿</span><span class="emoji-keripik">🍟</span></div>
+            <div class="pelepah-item"><span class="emoji-pelepah">🍌</span><span class="emoji-keripik">🥔</span></div>
+            <div class="pelepah-item"><span class="emoji-pelepah">🌿</span><span class="emoji-keripik">🍟</span></div>
+            <div class="pelepah-item"><span class="emoji-pelepah">🍌</span><span class="emoji-keripik">🥔</span></div>
         </div>
-        <div class="caption">✨ Renyah, Gurih, Bikin Nagih! ✨</div>
+
+        <div class="hero-caption">✨ Tersedia 6 Varian Rasa — Renyah, Gurih, Bikin Nagih! ✨</div>
     </div>
+
     <div class="hero-text">
         <h2>Keripik Pelepah Pisang<br>“Gedebok Mantap”</h2>
-        <p>Terbuat dari pelepah pisang pilihan, diolah higienis dengan bumbu rempah alami. Tersedia 6 varian rasa yang siap memanjakan lidah Anda.</p>
+        <p>Camilar unik dari alam. Terbuat dari pelepah pisang pilihan, diolah higienis dengan bumbu rempah alami. Renyah, gurih, dan bergizi!</p>
         <div class="flavor-list">
             <span class="flavor-tag">Original</span>
             <span class="flavor-tag">Balado</span>
@@ -620,26 +723,26 @@
     </div>
 </div>
 
-<!-- MENU NAVIGASI -->
+<!-- ================= MENU NAVIGASI ================= -->
 <div class="menu-nav">
     <button class="menu-btn active" data-page="stok"><i class="fas fa-boxes"></i> Stok Varian Rasa</button>
     <button class="menu-btn" data-page="order"><i class="fas fa-shopping-cart"></i> Pesan / Checkout</button>
     <button class="menu-btn" data-page="catering"><i class="fas fa-calendar-alt"></i> Catering / Pesan Waktu Tertentu</button>
 </div>
 
-<!-- KONTEN HALAMAN -->
+<!-- ================= KONTEN HALAMAN ================= -->
 <div class="page-container">
 
-    <!-- HALAMAN 1: STOK VARIAN RASA -->
+    <!-- ===== HALAMAN 1: STOK VARIAN RASA ===== -->
     <section id="stok" class="page-section active-section">
         <h2 class="section-title">📦 Stok Varian Rasa</h2>
         <div class="stok-wrapper">
-            <!-- Varian siap kirim -->
+            <!-- SIAP KIRIM -->
             <div class="stok-group ready">
                 <h3><i class="fas fa-check-circle"></i> Siap Kirim</h3>
                 <div class="varian-grid">
                     <div class="varian-card">
-                        <i class="fas fa-leaf" style="color:#5b8c3e;"></i>
+                        <i class="fas fa-leaf" style="color:#6b8e23;"></i>
                         <div class="nama">Original</div>
                         <div class="harga">Rp 15.000</div>
                         <div class="stok-info">Stok: 42 bungkus</div>
@@ -653,196 +756,38 @@
                         <div class="status-badge">✔ Siap kirim</div>
                     </div>
                     <div class="varian-card">
-                        <i class="fas fa-corn" style="color:#f1c40f;"></i>
+                        <i class="fas fa-corn" style="color:#d4a017;"></i>
                         <div class="nama">Jagung</div>
                         <div class="harga">Rp 15.500</div>
                         <div class="stok-info">Stok: 35 bungkus</div>
                         <div class="status-badge">✔ Siap kirim</div>
                     </div>
                     <div class="varian-card">
-                        <i class="fas fa-candy-cane" style="color:#e67e22;"></i>
+                        <i class="fas fa-candy-cane" style="color:#d97b3f;"></i>
                         <div class="nama">Manis</div>
                         <div class="harga">Rp 15.000</div>
                         <div class="stok-info">Stok: 19 bungkus</div>
                         <div class="status-badge">✔ Siap kirim</div>
                     </div>
+                    <div class="varian-card">
+                        <i class="fas fa-drumstick-bite" style="color:#7a4a1e;"></i>
+                        <div class="nama">Barbeque</div>
+                        <div class="harga">Rp 16.000</div>
+                        <div class="stok-info">Stok: 24 bungkus</div>
+                        <div class="status-badge">✔ Siap kirim</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Varian belum siap kirim -->
+            <!-- BELUM SIAP KIRIM -->
             <div class="stok-group notready">
                 <h3><i class="fas fa-hourglass-half"></i> Belum Siap Kirim (Pre-order)</h3>
                 <div class="varian-grid">
                     <div class="varian-card">
-                        <i class="fas fa-pepper-hot" style="color:#b33e1f;"></i>
+                        <i class="fas fa-pepper-hot" style="color:#a5240a;"></i>
                         <div class="nama">Pedas</div>
                         <div class="harga">Rp 16.500</div>
                         <div class="stok-info">Stok: 0 bungkus</div>
                         <div class="status-badge">⏳ Restock 2 hari</div>
                     </div>
-                    <div class="varian-card">
-                        <i class="fas fa-seedling" style="color:#27ae60;"></i>
-                        <div class="nama">Daun Jeruk</div>
-                        <div class="harga">Rp 17.000</div>
-                        <div class="stok-info">Stok: 0 bungkus</div>
-                        <div class="status-badge">⏳ Restock 3 hari</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p style="margin-top:2rem; font-style:italic; color:#846b45;"><i class="fas fa-info-circle"></i> Harga per bungkus (berat ±150 gram). Stok dapat berubah sewaktu-waktu.</p>
-    </section>
-
-    <!-- HALAMAN 2: PEMESANAN / CHECKOUT -->
-    <section id="order" class="page-section">
-        <h2 class="section-title">🛒 Pemesanan / Checkout</h2>
-        <form class="order-form" id="orderForm" onsubmit="kirimPesanan(event)">
-            <div class="form-row">
-                <div class="form-group">
-                    <label><i class="fas fa-user"></i> Nama Lengkap</label>
-                    <input type="text" placeholder="Nama Anda" required>
-                </div>
-                <div class="form-group">
-                    <label><i class="fas fa-phone-alt"></i> No. WhatsApp</label>
-                    <input type="tel" placeholder="0812xxxxxxx" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label><i class="fas fa-map-marker-alt"></i> Alamat Pengiriman Lengkap</label>
-                <textarea placeholder="Jalan, No. Rumah, RT/RW, Kelurahan, Kecamatan, Kota, Kode Pos" required></textarea>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label><i class="fas fa-box"></i> Pilihan Rasa & Jumlah</label>
-                    <select id="pesananSelect" required>
-                        <option value="">-- Pilih Varian --</option>
-                        <option value="Original|15000">Original (Rp15.000) - Siap kirim</option>
-                        <option value="Balado|16000">Balado (Rp16.000) - Siap kirim</option>
-                        <option value="Jagung|15500">Jagung (Rp15.500) - Siap kirim</option>
-                        <option value="Manis|15000">Manis (Rp15.000) - Siap kirim</option>
-                        <option value="Pedas|16500">Pedas (Rp16.500) - Pre-order</option>
-                        <option value="Daun Jeruk|17000">Daun Jeruk (Rp17.000) - Pre-order</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label><i class="fas fa-sort-amount-up"></i> Jumlah (bungkus)</label>
-                    <input type="number" min="1" value="1" id="jumlahInput" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label><i class="fas fa-credit-card"></i> Metode Pembayaran</label>
-                <div class="payment-options">
-                    <label><input type="radio" name="payment" value="Transfer Bank" checked> <i class="fas fa-university"></i> Transfer Bank (BCA/Mandiri)</label>
-                    <label><input type="radio" name="payment" value="E-Wallet"> <i class="fas fa-wallet"></i> E-Wallet (OVO/Dana/ShopeePay)</label>
-                    <label><input type="radio" name="payment" value="COD"> <i class="fas fa-truck"></i> COD (Bayar di Tempat)</label>
-                </div>
-            </div>
-
-            <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Kirim Pesanan</button>
-        </form>
-    </section>
-
-    <!-- HALAMAN 3: CATERING / PESAN WAKTU TERTENTU -->
-    <section id="catering" class="page-section">
-        <h2 class="section-title">📅 Pesan untuk Waktu Tertentu / Catering</h2>
-        <div class="catering-box">
-            <div class="catering-info">
-                <h3>Butuh camilan untuk acara?</h3>
-                <p style="font-weight:600; margin-bottom:1rem;">Gedebok Mantap siap mensuplai keripik pelepah pisang untuk berbagai acara:</p>
-                <ul>
-                    <li><i class="fas fa-birthday-cake"></i> Pesta ulang tahun & syukuran</li>
-                    <li><i class="fas fa-briefcase"></i> Meeting kantor & seminar</li>
-                    <li><i class="fas fa-mosque"></i> Pengajian & acara keagamaan</li>
-                    <li><i class="fas fa-graduation-cap"></i> Wisuda & reuni</li>
-                    <li><i class="fas fa-hands-helping"></i> Sumbangan / snack box</li>
-                </ul>
-                <p style="margin-top:1.5rem; background:#fff2d7; padding:1rem; border-radius:30px;"><i class="fas fa-tags"></i> Harga khusus untuk pemesanan minimal 20 bungkus. Bisa custom rasa dan label.</p>
-            </div>
-            <div class="catering-form">
-                <h3 style="margin-bottom:1.5rem; color:#5a3a15;">Form Pemesanan Catering</h3>
-                <div class="form-group">
-                    <label>Nama Pemesan</label>
-                    <input type="text" placeholder="Nama Anda" id="catNama">
-                </div>
-                <div class="form-group">
-                    <label>Tanggal Acara</label>
-                    <input type="date" id="catTanggal">
-                </div>
-                <div class="form-group">
-                    <label>Jumlah Total (bungkus)</label>
-                    <input type="number" min="20" value="20" id="catJumlah">
-                </div>
-                <div class="form-group">
-                    <label>Varian yang diinginkan</label>
-                    <select id="catVarian">
-                        <option>Campur (Original, Balado, Jagung, Manis)</option>
-                        <option>Original + Balado</option>
-                        <option>Semua Varian (6 rasa)</option>
-                        <option>Custom (tulis di catatan)</option>
-                    </select>
-                </div>
-                <button class="btn-submit" style="font-size:1.2rem; padding:1rem;" onclick="kirimCatering(event)"><i class="fas fa-calendar-check"></i> Ajukan Pesanan Catering</button>
-            </div>
-        </div>
-    </section>
-</div>
-
-<div class="footer-note">
-    <i class="fas fa-copyright"></i> 2025 Gedebok Mantap — Keripik Pelepah Pisang Renyah, Gurih, Enak. 
-</div>
-
-<script>
-    // Navigasi menu
-    const menuBtns = document.querySelectorAll('.menu-btn');
-    const sections = document.querySelectorAll('.page-section');
-
-    menuBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Hapus active dari semua tombol
-            menuBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            // Sembunyikan semua section
-            sections.forEach(sec => sec.classList.remove('active-section'));
-
-            // Tampilkan section yang dipilih
-            const pageId = btn.getAttribute('data-page');
-            document.getElementById(pageId).classList.add('active-section');
-        });
-    });
-
-    // Fungsi kirim pesanan (simulasi)
-    function kirimPesanan(e) {
-        e.preventDefault();
-        const select = document.getElementById('pesananSelect');
-        const jumlah = document.getElementById('jumlahInput').value;
-        if (!select.value) {
-            alert('Silakan pilih varian rasa terlebih dahulu.');
-            return;
-        }
-        const [rasa, harga] = select.value.split('|');
-        const total = parseInt(harga) * parseInt(jumlah);
-        alert(`✅ Pesanan Anda terkirim!\n\nRasa: ${rasa}\nJumlah: ${jumlah} bungkus\nTotal: Rp ${total.toLocaleString('id-ID')}\n\nKami akan menghubungi via WhatsApp untuk konfirmasi.`);
-        // Reset form (opsional)
-        // document.getElementById('orderForm').reset();
-    }
-
-    // Fungsi catering
-    function kirimCatering(e) {
-        e.preventDefault();
-        const nama = document.getElementById('catNama').value || 'Pelanggan';
-        const tanggal = document.getElementById('catTanggal').value || 'belum ditentukan';
-        const jumlah = document.getElementById('catJumlah').value;
-        alert(`📅 Permintaan catering dari ${nama}\nTanggal acara: ${tanggal}\nJumlah: ${jumlah} bungkus\n\nTim kami akan segera menghubungi Anda untuk detail.`);
-    }
-
-    // Set tanggal minimal hari ini untuk catering
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('catTanggal').setAttribute('min', today);
-</script>
-
-</body>
-</html>
+                    <div class="varian-card
